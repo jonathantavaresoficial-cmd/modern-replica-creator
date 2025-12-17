@@ -4,7 +4,7 @@ import robotImage from "@/assets/robot-bitcoin.png";
 
 const HeroSection = () => {
   return (
-    <section className="pt-24 lg:pt-32 pb-12 lg:pb-20 relative overflow-hidden">
+    <section className="pt-16 lg:pt-32 pb-12 lg:pb-20 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-primary/20 to-secondary/20 blur-[120px] rounded-full" />
@@ -24,10 +24,10 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Banner */}
-        <div className="flex justify-center mb-6 lg:mb-12">
-          <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-secondary/20 to-primary/20 border border-secondary/30 animate-pulse-glow">
-            <Rocket className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium text-secondary">New: Theta AI with 18% monthly return!</span>
+        <div className="flex justify-center mb-4 lg:mb-12">
+          <div className="inline-flex items-center gap-1.5 lg:gap-2 px-4 lg:px-6 py-1.5 lg:py-2.5 rounded-full bg-gradient-to-r from-secondary/20 to-primary/20 border border-secondary/30 animate-pulse-glow">
+            <Rocket className="w-3 h-3 lg:w-4 lg:h-4 text-secondary" />
+            <span className="text-xs lg:text-sm font-medium text-secondary">New: Theta AI with 18% monthly return!</span>
           </div>
         </div>
 
@@ -52,7 +52,7 @@ const HeroSection = () => {
         </div>
 
         {/* Robot for mobile/tablet - below content */}
-        <div className="mt-6 lg:mt-12 flex justify-center lg:hidden">
+        <div className="mt-4 lg:mt-12 flex justify-center lg:hidden">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 blur-[60px] rounded-full" />
             <img 
