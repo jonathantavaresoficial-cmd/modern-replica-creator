@@ -72,7 +72,15 @@ const PlansSection = () => {
     <section className="pt-6 pb-10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-gradient mb-4">
+          <h2 
+            className="text-3xl md:text-5xl font-display font-bold mb-4"
+            style={{
+              background: "linear-gradient(135deg, #d4a574 0%, #f5d742 50%, #d4a574 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
             Available AI Plans
           </h2>
           <p className="text-muted-foreground text-lg">
