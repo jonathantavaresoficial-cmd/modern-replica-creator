@@ -90,11 +90,13 @@ const PlansSection = () => {
                 padding: "1px",
               }}
             >
-              {/* Glow effect on hover */}
+              {/* Animated border glow */}
               <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
+                className="absolute inset-0 rounded-2xl opacity-60"
                 style={{
-                  background: "radial-gradient(circle at center, rgba(139, 92, 246, 0.4) 0%, transparent 70%)",
+                  background: "linear-gradient(135deg, rgba(139, 92, 246, 0.5) 0%, transparent 50%, rgba(139, 92, 246, 0.5) 100%)",
+                  animation: `borderPulse 3s ease-in-out infinite`,
+                  animationDelay: `${index * 0.3}s`,
                 }}
               />
               
@@ -107,58 +109,91 @@ const PlansSection = () => {
               >
                 {/* Diagonal Stripes Background */}
                 <div 
-                  className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+                  className="absolute inset-0 opacity-10"
                   style={{
                     backgroundImage: "repeating-linear-gradient(135deg, transparent, transparent 10px, rgba(139, 92, 246, 0.3) 10px, rgba(139, 92, 246, 0.3) 11px)",
                   }}
                 />
 
-                {/* Shimmer effect */}
+                {/* Ambient purple glow - top */}
                 <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                  className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-3xl"
                   style={{
-                    background: "linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.03) 45%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.03) 55%, transparent 60%)",
-                    backgroundSize: "200% 100%",
-                    animation: "shimmer 2s infinite",
+                    background: "rgba(139, 92, 246, 0.15)",
+                    animation: `floatGlow 4s ease-in-out infinite`,
+                    animationDelay: `${index * 0.5}s`,
                   }}
                 />
+
+                {/* Ambient purple glow - bottom */}
+                <div 
+                  className="absolute -bottom-20 -left-20 w-40 h-40 rounded-full blur-3xl"
+                  style={{
+                    background: "rgba(139, 92, 246, 0.1)",
+                    animation: `floatGlow 5s ease-in-out infinite reverse`,
+                    animationDelay: `${index * 0.4}s`,
+                  }}
+                />
+
+                {/* Subtle moving light streak */}
+                <div 
+                  className="absolute inset-0 overflow-hidden rounded-2xl"
+                >
+                  <div 
+                    className="absolute w-32 h-full opacity-[0.03]"
+                    style={{
+                      background: "linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.8), transparent)",
+                      animation: `lightStreak 6s ease-in-out infinite`,
+                      animationDelay: `${index * 0.7}s`,
+                    }}
+                  />
+                </div>
                 
                 <div className="relative text-center z-10">
-                  {/* Icon Circle */}
+                  {/* Icon Circle with pulse */}
                   <div 
-                    className="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.4)]"
+                    className="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center relative"
                     style={{
                       background: "rgba(139, 92, 246, 0.1)",
                       border: "2px solid rgba(139, 92, 246, 0.5)",
                       boxShadow: "0 0 20px rgba(139, 92, 246, 0.2), inset 0 0 20px rgba(139, 92, 246, 0.1)",
                     }}
                   >
-                    <Bot className="w-12 h-12 text-[#8b5cf6] transition-transform duration-500 group-hover:scale-110" />
+                    {/* Pulsing ring */}
+                    <div 
+                      className="absolute inset-0 rounded-full"
+                      style={{
+                        border: "1px solid rgba(139, 92, 246, 0.3)",
+                        animation: `ringPulse 3s ease-out infinite`,
+                        animationDelay: `${index * 0.2}s`,
+                      }}
+                    />
+                    <Bot className="w-12 h-12 text-[#8b5cf6]" />
                   </div>
 
                   {/* Plan Name */}
-                  <h3 className="text-2xl font-display font-bold mb-3 text-white tracking-wide transition-all duration-300 group-hover:text-[#a78bfa]">
+                  <h3 className="text-2xl font-display font-bold mb-3 text-white tracking-wide">
                     {plan.name}
                   </h3>
 
                   {/* Return Rate with Lines */}
                   <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#8b5cf6]/50 transition-all duration-500 group-hover:w-12 group-hover:to-[#8b5cf6]" />
+                    <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#8b5cf6]/50" />
                     <span className="text-muted-foreground text-sm">
                       Return: <span className="text-[#22c55e] font-semibold">{plan.rate}</span>
                     </span>
-                    <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#8b5cf6]/50 transition-all duration-500 group-hover:w-12 group-hover:to-[#8b5cf6]" />
+                    <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#8b5cf6]/50" />
                   </div>
 
                   {/* Price with Chrome Gradient */}
                   <div 
-                    className="text-6xl font-display font-bold mb-2 transition-all duration-300 group-hover:scale-105"
+                    className="text-6xl font-display font-bold mb-2"
                     style={{
                       background: "linear-gradient(135deg, #a855f7 0%, #c084fc 30%, #d4a574 50%, #f5d742 70%, #d4a574 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
-                      filter: "drop-shadow(0 0 10px rgba(168, 85, 247, 0.3))",
+                      filter: "drop-shadow(0 0 8px rgba(168, 85, 247, 0.2))",
                     }}
                   >
                     {plan.min}
@@ -167,7 +202,7 @@ const PlansSection = () => {
 
                   {/* Details Box */}
                   <div 
-                    className="rounded-xl p-5 mb-6 space-y-4 transition-all duration-500 group-hover:border-[rgba(139,92,246,0.4)]"
+                    className="rounded-xl p-5 mb-6 space-y-4"
                     style={{
                       background: "rgba(15, 15, 30, 0.8)",
                       border: "1px solid rgba(139, 92, 246, 0.2)",
@@ -180,7 +215,7 @@ const PlansSection = () => {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground text-sm">Daily return:</span>
-                      <span className="text-[#22c55e] font-bold text-sm transition-all duration-300 group-hover:text-[#4ade80]">{plan.dailyReturn}</span>
+                      <span className="text-[#22c55e] font-bold text-sm">{plan.dailyReturn}</span>
                     </div>
                   </div>
 
@@ -201,11 +236,39 @@ const PlansSection = () => {
         </div>
       </div>
 
-      {/* CSS for shimmer animation */}
+      {/* CSS for animations */}
       <style>{`
-        @keyframes shimmer {
-          0% { background-position: 200% 0; }
-          100% { background-position: -200% 0; }
+        @keyframes borderPulse {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.6; }
+        }
+        
+        @keyframes floatGlow {
+          0%, 100% { 
+            transform: translate(0, 0) scale(1);
+            opacity: 0.15;
+          }
+          50% { 
+            transform: translate(10px, -10px) scale(1.1);
+            opacity: 0.25;
+          }
+        }
+        
+        @keyframes lightStreak {
+          0% { transform: translateX(-100%); }
+          50% { transform: translateX(400%); }
+          100% { transform: translateX(400%); }
+        }
+        
+        @keyframes ringPulse {
+          0% { 
+            transform: scale(1);
+            opacity: 0.5;
+          }
+          100% { 
+            transform: scale(1.5);
+            opacity: 0;
+          }
         }
       `}</style>
     </section>
