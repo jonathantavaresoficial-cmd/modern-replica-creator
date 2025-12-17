@@ -4,10 +4,12 @@ import FeaturesSection from "@/components/FeaturesSection";
 import PlansSection from "@/components/PlansSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import CalculatorSection from "@/components/CalculatorSection";
+import CryptoBackground from "@/components/CryptoBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <CryptoBackground />
       <Header />
       <main>
         <HeroSection />
