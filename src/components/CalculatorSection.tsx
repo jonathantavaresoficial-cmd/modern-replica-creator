@@ -69,7 +69,7 @@ const CalculatorSection = () => {
                       {plans.map((plan) => (
                         <SelectItem key={plan.name} value={plan.name}>
                           <span className="font-display font-semibold">{plan.name}</span>
-                          <span className="text-primary ml-2">({plan.rate}%)</span>
+                          <span className="text-amber-400 ml-2 font-medium">({plan.rate}%)</span>
                         </SelectItem>
                       ))}
                     </SelectContent>
