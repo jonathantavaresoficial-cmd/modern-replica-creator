@@ -18,6 +18,9 @@ const HeroSection = () => {
             src={robotImage} 
             alt="AI Robot" 
             className="relative w-72 xl:w-96 animate-float drop-shadow-2xl"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
       </div>
@@ -59,6 +62,9 @@ const HeroSection = () => {
               src={robotImage} 
               alt="AI Robot" 
               className="relative w-64 md:w-72 animate-float drop-shadow-2xl"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
         </div>
