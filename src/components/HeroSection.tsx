@@ -19,10 +19,10 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Main content with robot */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        {/* Main content - stacked layout */}
+        <div className="flex flex-col items-center text-center">
           {/* Text content */}
-          <div className="flex-1 text-center lg:text-left">
+          <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
               <span className="text-foreground">Revolutionize your Investments</span>
               <br />
@@ -31,7 +31,7 @@ const HeroSection = () => {
               <span className="text-gradient">AI-Powered Arbitrage Robots</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
               Our platform uses advanced AI algorithms to maximize your profits in the cryptocurrency market with complete security and transparency.
             </p>
 
@@ -41,14 +41,14 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Robot image */}
-          <div className="flex-1 flex justify-center lg:justify-end">
+          {/* Robot image below */}
+          <div className="mt-12">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 blur-[60px] rounded-full" />
               <img 
                 src={robotImage} 
                 alt="AI Robot" 
-                className="relative w-72 md:w-80 lg:w-96 animate-float drop-shadow-2xl"
+                className="relative w-64 md:w-72 lg:w-80 animate-float drop-shadow-2xl"
               />
             </div>
           </div>
