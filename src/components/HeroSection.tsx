@@ -41,7 +41,7 @@ const HeroSection = () => {
             <span className="text-gradient">AI-Powered Arbitrage Robots</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground mb-6 lg:mb-10 max-w-2xl mx-auto">
             Our platform uses advanced AI algorithms to maximize your profits in the cryptocurrency market with complete security and transparency.
           </p>
 
@@ -52,7 +52,7 @@ const HeroSection = () => {
         </div>
 
         {/* Robot for mobile/tablet - below content */}
-        <div className="mt-6 lg:mt-12 flex justify-center lg:hidden">
+        <div className="mt-4 lg:mt-12 flex justify-center lg:hidden">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 blur-[60px] rounded-full" />
             <img 
