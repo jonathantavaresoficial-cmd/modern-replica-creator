@@ -187,7 +187,7 @@ const PlansSection = () => {
 
                   {/* Price with Chrome Gradient */}
                   <div 
-                    className="text-6xl font-display font-bold mb-2"
+                    className="text-6xl font-poppins font-bold mb-2"
                     style={{
                       background: "linear-gradient(135deg, #a855f7 0%, #c084fc 30%, #d4a574 50%, #f5d742 70%, #d4a574 100%)",
                       WebkitBackgroundClip: "text",
