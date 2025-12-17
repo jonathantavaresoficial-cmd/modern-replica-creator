@@ -26,7 +26,7 @@ const reasons = [
 
 const WhyChooseSection = () => {
   return (
-    <section className="py-20 relative">
+    <section className="pt-6 pb-10 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-gradient mb-4">
