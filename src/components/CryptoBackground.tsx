@@ -70,26 +70,58 @@ const CryptoBackground = () => {
   useEffect(() => {
     const generateIcons = () => {
       const newIcons: FloatingIcon[] = [];
-      const positions = [
-        { x: 5, y: 15 }, { x: 90, y: 20 },
-        { x: 8, y: 45 }, { x: 92, y: 50 },
-        { x: 3, y: 75 }, { x: 95, y: 80 },
-        { x: 15, y: 30 }, { x: 85, y: 35 },
-        { x: 10, y: 60 }, { x: 88, y: 65 },
-        { x: 6, y: 90 }, { x: 93, y: 10 },
+      
+      // Posições alternadas garantindo diversidade - esquerda e direita intercaladas
+      const leftPositions = [
+        { x: 5, y: 10 },
+        { x: 8, y: 35 },
+        { x: 3, y: 55 },
+        { x: 12, y: 75 },
+        { x: 6, y: 92 },
+      ];
+      
+      const rightPositions = [
+        { x: 92, y: 18 },
+        { x: 88, y: 42 },
+        { x: 95, y: 62 },
+        { x: 85, y: 82 },
+        { x: 90, y: 95 },
       ];
 
-      positions.forEach((pos, index) => {
-        const crypto = cryptoIcons[index % cryptoIcons.length];
+      // Distribuição: cada cripto aparece uma vez de cada lado, sem repetir perto
+      const cryptoOrder = [...cryptoIcons]; // BTC, ETH, LTC, SOL, BNB, USDT
+      
+      // Lado esquerdo: BTC, LTC, BNB, ETH, SOL (alternado)
+      const leftCryptos = [cryptoOrder[0], cryptoOrder[2], cryptoOrder[4], cryptoOrder[1], cryptoOrder[3]];
+      // Lado direito: USDT, SOL, ETH, LTC, BTC (inverso alternado)
+      const rightCryptos = [cryptoOrder[5], cryptoOrder[3], cryptoOrder[1], cryptoOrder[2], cryptoOrder[0]];
+
+      leftPositions.forEach((pos, index) => {
+        const crypto = leftCryptos[index % leftCryptos.length];
         newIcons.push({
-          id: `${crypto.id}-${index}`,
-          x: pos.x + (Math.random() * 4 - 2),
-          y: pos.y + (Math.random() * 4 - 2),
-          size: 24 + Math.random() * 20,
-          opacity: 0.03 + Math.random() * 0.04,
-          animationDelay: Math.random() * 5,
-          animationDuration: 15 + Math.random() * 10,
-          rotation: Math.random() * 360,
+          id: `left-${crypto.id}-${index}`,
+          x: pos.x + (Math.random() * 3 - 1.5),
+          y: pos.y + (Math.random() * 3 - 1.5),
+          size: 28 + Math.random() * 16,
+          opacity: 0.04 + Math.random() * 0.03,
+          animationDelay: Math.random() * 8,
+          animationDuration: 18 + Math.random() * 12,
+          rotation: Math.random() * 30 - 15,
+          crypto,
+        });
+      });
+
+      rightPositions.forEach((pos, index) => {
+        const crypto = rightCryptos[index % rightCryptos.length];
+        newIcons.push({
+          id: `right-${crypto.id}-${index}`,
+          x: pos.x + (Math.random() * 3 - 1.5),
+          y: pos.y + (Math.random() * 3 - 1.5),
+          size: 28 + Math.random() * 16,
+          opacity: 0.04 + Math.random() * 0.03,
+          animationDelay: Math.random() * 8,
+          animationDuration: 18 + Math.random() * 12,
+          rotation: Math.random() * 30 - 15,
           crypto,
         });
       });
