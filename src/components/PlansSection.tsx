@@ -189,11 +189,11 @@ const PlansSection = () => {
                   <div 
                     className="text-6xl font-poppins font-bold mb-2"
                     style={{
-                      background: "linear-gradient(135deg, #8b5cf6 0%, #a855f7 35%, #c9a040 65%, #f5d742 100%)",
+                      background: "linear-gradient(135deg, #a78bfa 0%, #c4b5fd 35%, #fcd34d 65%, #fde047 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
-                      filter: "drop-shadow(0 0 8px rgba(168, 85, 247, 0.2))",
+                      filter: "drop-shadow(0 0 8px rgba(168, 85, 247, 0.3))",
                     }}
                   >
                     {plan.min}
@@ -223,7 +223,7 @@ const PlansSection = () => {
                   <button 
                     className="w-full py-4 px-6 rounded-xl font-bold text-lg tracking-wide transition-all duration-300 hover:shadow-[0_0_25px_rgba(139,92,246,0.5)] active:scale-95"
                     style={{
-                      background: "linear-gradient(90deg, #8b5cf6 0%, #a855f7 35%, #c9a040 65%, #f5d742 100%)",
+                      background: "linear-gradient(90deg, #a78bfa 0%, #c4b5fd 35%, #fcd34d 65%, #fde047 100%)",
                       color: "#1a1a2e",
                     }}
                   >
