@@ -1,5 +1,4 @@
 import { Bot } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const plans = [
   {
@@ -9,7 +8,7 @@ const plans = [
     min: "$50",
     maxMultiplier: "10x",
     maxValue: "$500",
-    nameColor: "text-white",
+    nameColor: "text-[#f5a623]",
     accentColor: "text-[#f5a623]",
     borderColor: "border-[#f5a623]",
     iconBg: "bg-[#f5a623]/10",
@@ -57,7 +56,7 @@ const plans = [
     min: "$800",
     maxMultiplier: "10x",
     maxValue: "$8000",
-    nameColor: "text-white",
+    nameColor: "text-[#f5a623]",
     accentColor: "text-[#f5a623]",
     borderColor: "border-[#f5a623]",
     iconBg: "bg-[#f5a623]/10",
@@ -137,8 +136,16 @@ const PlansSection = () => {
                   <div className={`h-px w-8 bg-gradient-to-l from-transparent to-current ${plan.accentColor} opacity-50`} />
                 </div>
 
-                {/* Price */}
-                <div className={`text-5xl font-display font-bold mb-1 ${plan.accentColor}`}>
+                {/* Price with Chrome Gradient */}
+                <div 
+                  className="text-5xl font-display font-bold mb-1"
+                  style={{
+                    background: "linear-gradient(135deg, #a855f7 0%, #c084fc 25%, #d4a574 50%, #f5d742 75%, #a855f7 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
                   {plan.min}
                 </div>
                 <p className="text-muted-foreground text-sm mb-6">USDT</p>
@@ -155,10 +162,15 @@ const PlansSection = () => {
                   </div>
                 </div>
 
-                {/* Button */}
-                <Button className="w-full bg-gradient-to-r from-[#f5a623] to-[#f97316] hover:from-[#e09620] hover:to-[#e86815] text-black font-semibold">
+                {/* Button with Chrome Gradient */}
+                <button 
+                  className="w-full py-3 px-6 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+                  style={{
+                    background: "linear-gradient(135deg, #7c3aed 0%, #a855f7 25%, #c9a227 50%, #f5d742 75%, #a855f7 100%)",
+                  }}
+                >
                   Get Plan
-                </Button>
+                </button>
               </div>
             </div>
           ))}
