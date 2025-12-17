@@ -1,5 +1,6 @@
 import { Rocket, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import robotImage from "@/assets/robot-bitcoin.png";
 
 const HeroSection = () => {
   return (
@@ -18,24 +19,39 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Main heading */}
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight">
-            <span className="text-foreground">Revolutionize your Investments</span>
-            <br />
-            <span className="text-gradient">with</span>
-            <br />
-            <span className="text-gradient">AI-Powered Arbitrage Robots</span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Our platform uses advanced AI algorithms to maximize your profits in the cryptocurrency market with complete security and transparency.
-          </p>
+        {/* Main content with robot */}
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          {/* Text content */}
+          <div className="flex-1 text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
+              <span className="text-foreground">Revolutionize your Investments</span>
+              <br />
+              <span className="text-gradient">with</span>
+              <br />
+              <span className="text-gradient">AI-Powered Arbitrage Robots</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0">
+              Our platform uses advanced AI algorithms to maximize your profits in the cryptocurrency market with complete security and transparency.
+            </p>
 
-          <Button variant="hero" size="xl" className="group">
-            <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            Start Investing
-          </Button>
+            <Button variant="hero" size="xl" className="group">
+              <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              Start Investing
+            </Button>
+          </div>
+
+          {/* Robot image */}
+          <div className="flex-1 flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 blur-[60px] rounded-full" />
+              <img 
+                src={robotImage} 
+                alt="AI Robot" 
+                className="relative w-72 md:w-80 lg:w-96 animate-float drop-shadow-2xl"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
