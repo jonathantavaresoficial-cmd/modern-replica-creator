@@ -6,10 +6,10 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
+    --background: 260 40% 4%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 8%;
+    --card: 260 40% 6%;
     --card-foreground: 210 40% 98%;
 
     --popover: 222 47% 8%;
@@ -50,7 +50,7 @@
   }
 
   .dark {
-    --background: 222 47% 6%;
+    --background: 260 40% 4%;
     --foreground: 210 40% 98%;
   }
 }
@@ -63,8 +63,9 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     background-image: 
-      radial-gradient(ellipse at top, hsl(var(--primary) / 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom right, hsl(var(--secondary) / 0.05) 0%, transparent 50%);
+      radial-gradient(ellipse at top, hsl(270 60% 20% / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, hsl(var(--secondary) / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at center, hsl(260 50% 10% / 0.3) 0%, transparent 70%);
     background-attachment: fixed;
   }
 
