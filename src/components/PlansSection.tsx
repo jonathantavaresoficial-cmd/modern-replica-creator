@@ -1,93 +1,107 @@
-import { Rocket, Star, Zap, Shield, TrendingUp, Cpu, Bot, Crown } from "lucide-react";
+import { Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const plans = [
   {
-    icon: Rocket,
     name: "SIGMA",
-    subtitle: "Perfeito para iniciantes",
-    rate: "12.00%",
-    min: "$50 USDT",
-    color: "from-cyan/20 to-transparent",
-    accentColor: "text-primary",
-    borderColor: "border-primary/30",
+    rate: "12%",
+    dailyReturn: "~0.40%",
+    min: "$50",
+    maxMultiplier: "10x",
+    maxValue: "$500",
+    color: "yellow",
   },
   {
-    icon: Star,
     name: "NEBULA",
-    subtitle: "Crescimento estável",
-    rate: "12.50%",
-    min: "$100 USDT",
-    color: "from-blue/20 to-transparent",
-    accentColor: "text-blue",
-    borderColor: "border-blue/30",
+    rate: "12.5%",
+    dailyReturn: "~0.42%",
+    min: "$100",
+    maxMultiplier: "10x",
+    maxValue: "$1000",
+    color: "purple",
   },
   {
-    icon: Zap,
     name: "QUANTUM",
-    subtitle: "Performance otimizada",
-    rate: "13.00%",
-    min: "$300 USDT",
-    color: "from-secondary/20 to-transparent",
-    accentColor: "text-secondary",
-    borderColor: "border-secondary/30",
+    rate: "13%",
+    dailyReturn: "~0.43%",
+    min: "$300",
+    maxMultiplier: "10x",
+    maxValue: "$3000",
+    color: "orange",
   },
   {
-    icon: Shield,
     name: "GENESIS",
-    subtitle: "Estratégias avançadas",
-    rate: "14.00%",
-    min: "$500 USDT",
-    color: "from-accent/20 to-transparent",
-    accentColor: "text-accent",
-    borderColor: "border-accent/30",
+    rate: "14%",
+    dailyReturn: "~0.47%",
+    min: "$500",
+    maxMultiplier: "10x",
+    maxValue: "$5000",
+    color: "green",
   },
   {
-    icon: TrendingUp,
     name: "ECLIPSE",
-    subtitle: "Alto desempenho",
-    rate: "15.00%",
-    min: "$800 USDT",
-    max: "Up to 8000 USDT",
-    color: "from-primary/20 to-transparent",
-    accentColor: "text-primary",
-    borderColor: "border-primary/30",
+    rate: "15%",
+    dailyReturn: "~0.50%",
+    min: "$800",
+    maxMultiplier: "10x",
+    maxValue: "$8000",
+    color: "yellow",
   },
   {
-    icon: Cpu,
     name: "AETHER",
-    subtitle: "Profissional",
-    rate: "16.00%",
-    min: "$1000 USDT",
-    max: "Up to 10000 USDT",
-    color: "from-blue/20 to-transparent",
-    accentColor: "text-blue",
-    borderColor: "border-blue/30",
+    rate: "16%",
+    dailyReturn: "~0.53%",
+    min: "$1000",
+    maxMultiplier: "10x",
+    maxValue: "$10000",
+    color: "purple",
   },
   {
-    icon: Bot,
     name: "NOVA",
-    subtitle: "Elite Premium",
-    rate: "17.00%",
-    min: "$2000 USDT",
-    max: "Up to 20000 USDT",
-    color: "from-secondary/20 to-transparent",
-    accentColor: "text-secondary",
-    borderColor: "border-secondary/30",
+    rate: "17%",
+    dailyReturn: "~0.57%",
+    min: "$2000",
+    maxMultiplier: "10x",
+    maxValue: "$20000",
+    color: "orange",
   },
   {
-    icon: Crown,
     name: "INFINITY",
-    subtitle: "Máximo Potencial",
-    rate: "18.00%",
-    min: "$3000 USDT",
-    max: "Up to 30000 USDT",
-    color: "from-accent/20 to-transparent",
-    accentColor: "text-accent",
-    borderColor: "border-accent/30",
-    featured: true,
+    rate: "18%",
+    dailyReturn: "~0.60%",
+    min: "$3000",
+    maxMultiplier: "10x",
+    maxValue: "$30000",
+    color: "green",
   },
 ];
+
+const colorStyles = {
+  yellow: {
+    text: "text-yellow-400",
+    border: "border-yellow-400/30",
+    iconBorder: "border-yellow-400",
+    iconBg: "bg-yellow-400/10",
+  },
+  purple: {
+    text: "text-purple-400",
+    border: "border-purple-400/30",
+    iconBorder: "border-purple-400",
+    iconBg: "bg-purple-400/10",
+  },
+  orange: {
+    text: "text-orange-400",
+    border: "border-orange-400/30",
+    iconBorder: "border-orange-400",
+    iconBg: "bg-orange-400/10",
+  },
+  green: {
+    text: "text-green-400",
+    border: "border-green-400/30",
+    iconBorder: "border-green-400",
+    iconBg: "bg-green-400/10",
+  },
+};
 
 const PlansSection = () => {
   return (
@@ -103,38 +117,57 @@ const PlansSection = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative rounded-2xl border ${plan.borderColor} bg-gradient-to-b ${plan.color} backdrop-blur-sm p-6 card-hover ${
-                plan.featured ? "ring-2 ring-accent/50" : ""
-              }`}
-            >
-              <div className="text-center">
-                <plan.icon className={`w-10 h-10 mx-auto mb-4 ${plan.accentColor}`} />
-                <h3 className={`text-xl font-display font-bold mb-1 ${plan.accentColor}`}>
-                  {plan.name}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4">{plan.subtitle}</p>
-                
-                <div className={`text-4xl font-display font-bold mb-1 ${plan.accentColor}`}>
-                  {plan.rate}
+          {plans.map((plan, index) => {
+            const styles = colorStyles[plan.color as keyof typeof colorStyles];
+            return (
+              <div
+                key={index}
+                className={`relative rounded-2xl border ${styles.border} bg-[#0d0d1a] p-6`}
+              >
+                <div className="text-center">
+                  {/* Icon Circle */}
+                  <div className={`w-20 h-20 mx-auto mb-6 rounded-full border-2 ${styles.iconBorder} ${styles.iconBg} flex items-center justify-center`}>
+                    <Bot className={`w-10 h-10 ${styles.text}`} />
+                  </div>
+
+                  {/* Plan Name */}
+                  <h3 className={`text-2xl font-display font-bold mb-4 ${plan.color === 'yellow' ? 'text-foreground' : styles.text}`}>
+                    {plan.name}
+                  </h3>
+
+                  {/* Return Rate with Lines */}
+                  <div className="flex items-center justify-center gap-2 mb-6">
+                    <div className={`h-px w-8 bg-gradient-to-r from-transparent ${plan.color === 'yellow' ? 'to-yellow-400/50' : plan.color === 'purple' ? 'to-purple-400/50' : plan.color === 'orange' ? 'to-orange-400/50' : 'to-green-400/50'}`} />
+                    <span className="text-muted-foreground text-sm">Return: <span className={styles.text}>{plan.rate}</span></span>
+                    <div className={`h-px w-8 bg-gradient-to-l from-transparent ${plan.color === 'yellow' ? 'to-yellow-400/50' : plan.color === 'purple' ? 'to-purple-400/50' : plan.color === 'orange' ? 'to-orange-400/50' : 'to-green-400/50'}`} />
+                  </div>
+
+                  {/* Price */}
+                  <div className={`text-5xl font-display font-bold mb-1 ${styles.text}`}>
+                    {plan.min}
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-6">USDT</p>
+
+                  {/* Details Box */}
+                  <div className="bg-[#1a1a2e] rounded-lg p-4 mb-4 space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground text-sm">Max investment:</span>
+                      <span className="text-foreground font-semibold text-sm">{plan.maxMultiplier} ({plan.maxValue})</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground text-sm">Daily return:</span>
+                      <span className={`font-semibold text-sm ${styles.text}`}>{plan.dailyReturn}</span>
+                    </div>
+                  </div>
+
+                  {/* Button */}
+                  <Button className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black font-semibold">
+                    Get Plan
+                  </Button>
                 </div>
-                <p className="text-sm text-muted-foreground mb-4">monthly return</p>
-                
-                <div className={`text-xl font-bold mb-1 ${plan.accentColor}`}>
-                  {plan.min}
-                </div>
-                {plan.max && (
-                  <p className="text-xs text-muted-foreground mb-4">{plan.max}</p>
-                )}
-                
-                <Button variant="glass" className="w-full mt-4">
-                  Get Plan
-                </Button>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
