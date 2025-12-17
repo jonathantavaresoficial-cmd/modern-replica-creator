@@ -8,10 +8,6 @@ const plans = [
     min: "$50",
     maxMultiplier: "10x",
     maxValue: "$500",
-    nameColor: "text-[#f5a623]",
-    accentColor: "text-[#f5a623]",
-    borderColor: "border-[#f5a623]",
-    iconBg: "bg-[#f5a623]/10",
   },
   {
     name: "NEBULA",
@@ -20,10 +16,6 @@ const plans = [
     min: "$100",
     maxMultiplier: "10x",
     maxValue: "$1000",
-    nameColor: "text-[#a855f7]",
-    accentColor: "text-[#a855f7]",
-    borderColor: "border-[#a855f7]",
-    iconBg: "bg-[#a855f7]/10",
   },
   {
     name: "QUANTUM",
@@ -32,10 +24,6 @@ const plans = [
     min: "$300",
     maxMultiplier: "10x",
     maxValue: "$3000",
-    nameColor: "text-[#f97316]",
-    accentColor: "text-[#f97316]",
-    borderColor: "border-[#f97316]",
-    iconBg: "bg-[#f97316]/10",
   },
   {
     name: "GENESIS",
@@ -44,10 +32,6 @@ const plans = [
     min: "$500",
     maxMultiplier: "10x",
     maxValue: "$5000",
-    nameColor: "text-[#22c55e]",
-    accentColor: "text-[#22c55e]",
-    borderColor: "border-[#22c55e]",
-    iconBg: "bg-[#22c55e]/10",
   },
   {
     name: "ECLIPSE",
@@ -56,10 +40,6 @@ const plans = [
     min: "$800",
     maxMultiplier: "10x",
     maxValue: "$8000",
-    nameColor: "text-[#f5a623]",
-    accentColor: "text-[#f5a623]",
-    borderColor: "border-[#f5a623]",
-    iconBg: "bg-[#f5a623]/10",
   },
   {
     name: "AETHER",
@@ -68,10 +48,6 @@ const plans = [
     min: "$1000",
     maxMultiplier: "10x",
     maxValue: "$10000",
-    nameColor: "text-[#a855f7]",
-    accentColor: "text-[#a855f7]",
-    borderColor: "border-[#a855f7]",
-    iconBg: "bg-[#a855f7]/10",
   },
   {
     name: "NOVA",
@@ -80,10 +56,6 @@ const plans = [
     min: "$2000",
     maxMultiplier: "10x",
     maxValue: "$20000",
-    nameColor: "text-[#f97316]",
-    accentColor: "text-[#f97316]",
-    borderColor: "border-[#f97316]",
-    iconBg: "bg-[#f97316]/10",
   },
   {
     name: "INFINITY",
@@ -92,10 +64,6 @@ const plans = [
     min: "$3000",
     maxMultiplier: "10x",
     maxValue: "$30000",
-    nameColor: "text-[#22c55e]",
-    accentColor: "text-[#22c55e]",
-    borderColor: "border-[#22c55e]",
-    iconBg: "bg-[#22c55e]/10",
   },
 ];
 
@@ -116,61 +84,97 @@ const PlansSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative rounded-2xl border ${plan.borderColor}/30 bg-[#0d0d1a] p-6`}
+              className="relative rounded-2xl overflow-hidden"
+              style={{
+                background: "linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(139, 92, 246, 0.1) 100%)",
+                padding: "1px",
+              }}
             >
-              <div className="text-center">
-                {/* Icon Circle */}
-                <div className={`w-20 h-20 mx-auto mb-6 rounded-full border-2 ${plan.borderColor} ${plan.iconBg} flex items-center justify-center`}>
-                  <Bot className={`w-10 h-10 ${plan.accentColor}`} />
-                </div>
-
-                {/* Plan Name */}
-                <h3 className={`text-2xl font-display font-bold mb-4 ${plan.nameColor}`}>
-                  {plan.name}
-                </h3>
-
-                {/* Return Rate with Lines */}
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className={`h-px w-8 bg-gradient-to-r from-transparent to-current ${plan.accentColor} opacity-50`} />
-                  <span className="text-muted-foreground text-sm">Return: <span className={plan.accentColor}>{plan.rate}</span></span>
-                  <div className={`h-px w-8 bg-gradient-to-l from-transparent to-current ${plan.accentColor} opacity-50`} />
-                </div>
-
-                {/* Price with Chrome Gradient */}
+              {/* Card Inner */}
+              <div 
+                className="relative rounded-2xl p-6 overflow-hidden"
+                style={{
+                  background: "linear-gradient(180deg, #0f0f1a 0%, #0a0a12 100%)",
+                }}
+              >
+                {/* Diagonal Stripes Background */}
                 <div 
-                  className="text-5xl font-display font-bold mb-1"
+                  className="absolute inset-0 opacity-10"
                   style={{
-                    background: "linear-gradient(135deg, #a855f7 0%, #c084fc 25%, #d4a574 50%, #f5d742 75%, #a855f7 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
+                    backgroundImage: "repeating-linear-gradient(135deg, transparent, transparent 10px, rgba(139, 92, 246, 0.3) 10px, rgba(139, 92, 246, 0.3) 11px)",
                   }}
-                >
-                  {plan.min}
-                </div>
-                <p className="text-muted-foreground text-sm mb-6">USDT</p>
-
-                {/* Details Box */}
-                <div className="bg-[#1a1a2e] rounded-lg p-4 mb-4 space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground text-sm">Max investment:</span>
-                    <span className="text-foreground font-semibold text-sm">{plan.maxMultiplier} ({plan.maxValue})</span>
+                />
+                
+                <div className="relative text-center z-10">
+                  {/* Icon Circle */}
+                  <div 
+                    className="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center"
+                    style={{
+                      background: "rgba(139, 92, 246, 0.1)",
+                      border: "2px solid rgba(139, 92, 246, 0.5)",
+                      boxShadow: "0 0 20px rgba(139, 92, 246, 0.2)",
+                    }}
+                  >
+                    <Bot className="w-12 h-12 text-[#8b5cf6]" />
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground text-sm">Daily return:</span>
-                    <span className={`font-semibold text-sm ${plan.accentColor}`}>{plan.dailyReturn}</span>
-                  </div>
-                </div>
 
-                {/* Button with Chrome Gradient */}
-                <button 
-                  className="w-full py-3 px-6 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
-                  style={{
-                    background: "linear-gradient(135deg, #7c3aed 0%, #a855f7 25%, #c9a227 50%, #f5d742 75%, #a855f7 100%)",
-                  }}
-                >
-                  Get Plan
-                </button>
+                  {/* Plan Name */}
+                  <h3 className="text-2xl font-display font-bold mb-3 text-white tracking-wide">
+                    {plan.name}
+                  </h3>
+
+                  {/* Return Rate with Lines */}
+                  <div className="flex items-center justify-center gap-3 mb-6">
+                    <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#8b5cf6]/50" />
+                    <span className="text-muted-foreground text-sm">
+                      Return: <span className="text-[#22c55e] font-semibold">{plan.rate}</span>
+                    </span>
+                    <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#8b5cf6]/50" />
+                  </div>
+
+                  {/* Price with Chrome Gradient */}
+                  <div 
+                    className="text-6xl font-display font-bold mb-2"
+                    style={{
+                      background: "linear-gradient(135deg, #a855f7 0%, #c084fc 30%, #d4a574 50%, #f5d742 70%, #d4a574 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    {plan.min}
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-8 tracking-widest">USDT</p>
+
+                  {/* Details Box */}
+                  <div 
+                    className="rounded-xl p-5 mb-6 space-y-4"
+                    style={{
+                      background: "rgba(15, 15, 30, 0.8)",
+                      border: "1px solid rgba(139, 92, 246, 0.2)",
+                    }}
+                  >
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground text-sm">Max investment:</span>
+                      <span className="text-white font-bold text-sm">{plan.maxMultiplier} ({plan.maxValue})</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground text-sm">Daily return:</span>
+                      <span className="text-[#22c55e] font-bold text-sm">{plan.dailyReturn}</span>
+                    </div>
+                  </div>
+
+                  {/* Button with Chrome Gradient */}
+                  <button 
+                    className="w-full py-4 px-6 rounded-xl font-bold text-lg tracking-wide transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/25"
+                    style={{
+                      background: "linear-gradient(90deg, #8b5cf6 0%, #a855f7 25%, #d4a574 50%, #f5d742 75%, #f5d742 100%)",
+                      color: "#1a1a2e",
+                    }}
+                  >
+                    Get Plan
+                  </button>
+                </div>
               </div>
             </div>
           ))}
