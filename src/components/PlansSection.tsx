@@ -189,7 +189,7 @@ const PlansSection = () => {
                   <div 
                     className="text-6xl font-poppins font-bold mb-2"
                     style={{
-                      background: "linear-gradient(135deg, #a855f7 0%, #c084fc 30%, #d4a574 50%, #f5d742 70%, #d4a574 100%)",
+                      background: "linear-gradient(135deg, #8b5cf6 0%, #a855f7 40%, #c084fc 60%, #d4a574 80%, #f5d742 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
@@ -223,7 +223,7 @@ const PlansSection = () => {
                   <button 
                     className="w-full py-4 px-6 rounded-xl font-bold text-lg tracking-wide transition-all duration-300 hover:shadow-[0_0_25px_rgba(139,92,246,0.5)] active:scale-95"
                     style={{
-                      background: "linear-gradient(90deg, #8b5cf6 0%, #a855f7 25%, #d4a574 50%, #f5d742 75%, #f5d742 100%)",
+                      background: "linear-gradient(90deg, #7c3aed 0%, #8b5cf6 30%, #a855f7 50%, #d4a574 80%, #f5d742 100%)",
                       color: "#1a1a2e",
                     }}
                   >
