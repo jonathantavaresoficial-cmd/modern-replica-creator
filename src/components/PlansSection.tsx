@@ -227,7 +227,7 @@ const PlansSection = () => {
                       color: "#1a1a2e",
                     }}
                   >
-                    Get Plan
+                    To Subscribe
                   </button>
                 </div>
               </div>
