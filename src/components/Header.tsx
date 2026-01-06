@@ -1,6 +1,6 @@
 import { Globe, Send, Instagram } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import LoginDialog from "@/components/LoginDialog";
 import logo from "@/assets/logo-bynation.png";
 
 const Header = () => {
@@ -26,9 +26,11 @@ const Header = () => {
             <Instagram className="w-4 h-4 text-foreground" />
           </button>
           
-          <Button variant="outline" size="sm" className="hidden sm:flex" asChild>
-            <Link to="/login">Login</Link>
-          </Button>
+          <LoginDialog>
+            <Button variant="outline" size="sm" className="hidden sm:flex">
+              Login
+            </Button>
+          </LoginDialog>
           <Button variant="hero" size="sm">
             Sign Up
           </Button>
