@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Eye, EyeOff, Mail, Lock, ArrowRight, Sparkles, Shield, X } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock, ArrowRight, Sparkles, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -58,14 +58,6 @@ const LoginDialog = ({ children }: LoginDialogProps) => {
             <div className="absolute top-3 right-3 w-6 h-6 border-r-2 border-t-2 border-cyan/50 rounded-tr-lg" />
             <div className="absolute bottom-3 left-3 w-6 h-6 border-l-2 border-b-2 border-cyan/50 rounded-bl-lg" />
             <div className="absolute bottom-3 right-3 w-6 h-6 border-r-2 border-b-2 border-primary/50 rounded-br-lg" />
-
-            {/* Close button */}
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-background/50 border border-white/10 text-muted-foreground hover:text-foreground hover:bg-background/80 transition-all duration-300 hover:scale-110"
-            >
-              <X className="w-4 h-4" />
-            </button>
 
             <div className="relative z-10">
               {/* Header */}
