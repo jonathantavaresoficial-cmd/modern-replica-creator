@@ -1,6 +1,7 @@
 import { Globe, Send, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LoginDialog from "@/components/LoginDialog";
+import SignUpDialog from "@/components/SignUpDialog";
 import logo from "@/assets/logo-bynation.png";
 
 const Header = () => {
@@ -31,9 +32,11 @@ const Header = () => {
               Login
             </Button>
           </LoginDialog>
-          <Button variant="hero" size="sm">
-            Sign Up
-          </Button>
+          <SignUpDialog>
+            <Button variant="hero" size="sm">
+              Sign Up
+            </Button>
+          </SignUpDialog>
         </div>
       </div>
     </header>
