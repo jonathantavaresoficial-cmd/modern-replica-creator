@@ -1,4 +1,5 @@
 import { Globe, Send, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-bynation.png";
 
@@ -25,8 +26,8 @@ const Header = () => {
             <Instagram className="w-4 h-4 text-foreground" />
           </button>
           
-          <Button variant="outline" size="sm" className="hidden sm:flex">
-            Login
+          <Button variant="outline" size="sm" className="hidden sm:flex" asChild>
+            <Link to="/login">Login</Link>
           </Button>
           <Button variant="hero" size="sm">
             Sign Up
